@@ -7,6 +7,7 @@ const port = 3000
 const indexPage = fs.readFileSync('index.html')
 const aboutPage = fs.readFileSync('about.html')
 const contactPage = fs.readFileSync('contact.html')
+const notFoundPage = fs.readFileSync('404.html')
 
 const server = http.createServer((req, res) => {
 
@@ -18,7 +19,7 @@ const server = http.createServer((req, res) => {
         return res.end(contactPage)
     } else {
         res.statusCode = 404
-        res.end('Sayfa Bulunamadı')
+        res.end(notFoundPage)
     }
 
 })
